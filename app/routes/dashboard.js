@@ -9,10 +9,10 @@ export default Route.extend({
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                'rgba(45, 227, 113, 0.2)',
+                'rgba(3, 208, 142, 0.2)',
             ],
             borderColor: [
-                '#1fd06e'
+                '#03d08e'
             ],
             borderWidth: 1
         }]
@@ -20,7 +20,7 @@ export default Route.extend({
       options: {
         responsive: true,
         responsiveAnimationDuration: 100,
-        maintainAspectRation: false
+        maintainAspectRatio: false
       },
     }
   }

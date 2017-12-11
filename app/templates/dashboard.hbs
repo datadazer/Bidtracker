@@ -2,58 +2,30 @@
   <div class="col">
     <div class="row">
       <div class="col-lg-6">
-        <h3>Requested Bids</h3>
+        <header>
+          <h3>
+            <i class="material-icons">assignment_late</i>
+            Requested Bids
+          </h3>
+        </header>
       </div>
       <div class="col-lg-6">
-        <h3>Personal Performance</h3>
+        <h3>
+          <i class="material-icons">trending_up</i>
+          Personal Performance
+        </h3>
       </div>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col panel primary-panel">
-    <div class="bid-summary col">
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-2">Job</div>
-        <div class="col-lg-2">Location</div>
-        <div class="col-lg-2">Estimator</div>
-        <div class="w-100"></div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-2">Contractor</div>
-        <div class="col-lg-2">Architect</div>
-        <div class="col-lg-2">Plan Date</div>
-        <div class="col-lg-2">Delta #</div>
-      </div>
-    </div>
-    <div class="bid-summary col">
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-2">Job</div>
-        <div class="col-lg-2">Location</div>
-        <div class="col-lg-2">Estimator</div>
-        <div class="w-100"></div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-2">Contractor</div>
-        <div class="col-lg-2">Architect</div>
-        <div class="col-lg-2">Plan Date</div>
-        <div class="col-lg-2">Delta #</div>
-      </div>
-    </div>
-    <div class="bid-summary col">
-      <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-2">Job</div>
-        <div class="col-lg-2">Location</div>
-        <div class="col-lg-2">Estimator</div>
-        <div class="w-100"></div>
-        <div class="col-lg-1"></div>
-        <div class="col-lg-2">Contractor</div>
-        <div class="col-lg-2">Architect</div>
-        <div class="col-lg-2">Plan Date</div>
-        <div class="col-lg-2">Delta #</div>
-      </div>
-    </div>
+    {{bid-summary}}
+    {{bid-summary}}
+    {{bid-summary}}
+    {{bid-summary}}
+    {{bid-summary}}
+    {{bid-summary}}
   </div>
   <div class="col">
     <div class="row">
@@ -79,8 +51,6 @@
 </div>
 <div class="row">
   <div class="col panel primary-panel">
-    <div class="wrapper">
     {{ember-chart type='line' data=model.data options=model.options}}
-    </div>
   </div>
 </div>
