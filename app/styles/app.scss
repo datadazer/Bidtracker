@@ -19,8 +19,16 @@ h3 i.material-icons {
   font-weight: bold;
 }
 
-.primary-panel.col {
-  height: calc(50vh - 100px);
+.bids-panel.col {
+  height: 218px;
+  margin: 12px;
+  padding: 0px;
+  color: rgba(33, 37, 41, 0.72);
+  overflow: scroll;
+}
+
+.chart-panel {
+  height: calc(100vh - 400px);
   margin: 12px;
   padding: 0px;
   color: rgba(33, 37, 41, 0.72);
