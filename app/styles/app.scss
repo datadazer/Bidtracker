@@ -72,10 +72,11 @@ h3 i.material-icons {
   margin-top: -5px;
 }
 
-/* bootstrap change, so child elements can have %height */
-.row {
-  height: 100%;
+.row-chart-wrapper {
+  height: calc(100% - 50px);
 }
+
+/* bootstrap overrides */
 
 .btn {
   border-radius: 2px;
@@ -101,6 +102,18 @@ h3 i.material-icons {
 .btn-primary:hover {
   background-color: #03d08e;
   border: 1px solid #03d08e;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: transparent;
+  border-bottom: 2px solid #61d29e;
+  border-radius: 0px;
+  color: rgba(2, 189, 104, 0.78);
+}
+
+.nav-pills .nav-link {
+  color: rgba(0, 0, 0, 0.60);
 }
 
 

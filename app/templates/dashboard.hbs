@@ -51,6 +51,28 @@
 </div>
 <div class="row">
   <div class="col panel primary-panel">
-    {{ember-chart type='line' data=model.data options=model.options}}
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#"># of Bids</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">DM%</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bids Won</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Gross Profit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row row-chart-wrapper">
+      <div class="col-lg-12">
+      {{ember-chart type='line' data=model.data options=model.options}}
+      </div>
+    </div>
   </div>
 </div>
