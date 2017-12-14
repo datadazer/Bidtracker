@@ -1,6 +1,6 @@
-import Component from '@ember/component';
+import Controller from '@ember/controller';
 
-export default Component.extend({
+export default Controller.extend({
   session: Ember.inject.service('session'),
   actions: {
     authenticateSession() {

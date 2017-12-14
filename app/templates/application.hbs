@@ -1,5 +1,7 @@
 {{top-navbar}}
 
 <div class="container-fluid">
-  {{outlet}}
+  {{#if session.isAuthenticated}}
+    {{outlet}}
+  {{/if}}
 </div>
