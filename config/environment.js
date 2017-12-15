@@ -30,7 +30,8 @@ module.exports = function(environment) {
         apiKey: "688090261241-kllc2v7q8ptn376d92tk84880efvn01f.apps.googleusercontent.com",
         redirectUri: "http://localhost:4200"
       }
-    }
+    },
+    routeAfterAuthentication: 'dashboard'
   };
 
   if (environment === 'development') {

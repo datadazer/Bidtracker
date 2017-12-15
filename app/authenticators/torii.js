@@ -6,7 +6,7 @@ export default Torii.extend({
   torii: service('torii'),
   authenticate(options) {
     return this._super(options).then(function (data) {
-      alert(`authorizationCode:\n${data.authorizationCode}\nprovider: ${data.provider}\nredirectUri: ${data.redirectUri}`);
+      // alert(`authorizationCode:\n${data.authorizationCode}\nprovider: ${data.provider}\nredirectUri: ${data.redirectUri}`);
     });
   }
     /*
