@@ -6,9 +6,15 @@
 </div>
 <div class="row justify-content-center">
   <div class="col-lg-2">
-    <a class="btn btn-google" {{action 'authenticateSession'}}>
-      {{fa-icon "google"}} <span class="btn-text">Sign in with Google</span>
-    </a>
+    {{#if session.isAuthenticated}}
+      <a class="btn btn-google" {{action 'invalidateSession'}}>
+        {{fa-icon "google"}} <span class="btn-text">Logout</span>
+      </a>
+    {{else}}
+      <a class="btn btn-google" {{action 'authenticateSession'}}>
+        {{fa-icon "google"}} <span class="btn-text">Sign in with Google</span>
+      </a>
+    {{/if}}
   </div>
 </div>
 </div>
