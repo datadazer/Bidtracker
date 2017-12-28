@@ -28,8 +28,11 @@ module.exports = function(environment) {
     providers: {
       'google-oauth2': {
         apiKey: "688090261241-kllc2v7q8ptn376d92tk84880efvn01f.apps.googleusercontent.com",
+        // apiKey: "688090261241-0vek9b56e4ngmqgm78nu678u2ul0fme2.apps.googleusercontent.com",
         redirectUri: "http://localhost:4200",
-        // redirectUri: "http://localhost:4200/torii/redirect.html",
+        // redirectUri: "https://bidtracker.heroku.com",
+        // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
+        // tokenExchangeUri: "https://bidtracker.heroku.com/oauth/token"
         tokenExchangeUri: "http://localhost:3000/token"
       }
     },
@@ -64,6 +67,21 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.torii = {
+      providers: {
+        'google-oauth2': {
+          // apiKey: "688090261241-kllc2v7q8ptn376d92tk84880efvn01f.apps.googleusercontent.com",
+          apiKey: "688090261241-0vek9b56e4ngmqgm78nu678u2ul0fme2.apps.googleusercontent.com",
+          // redirectUri: "http://localhost:4200",
+          redirectUri: "https://bidtracker.heroku.com",
+          // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
+          tokenExchangeUri: "https://bidtracker.heroku.com/oauth/token"
+          // tokenExchangeUri: "http://localhost:3000/token"
+        }
+      },
+      routeAfterAuthentication: 'dashboard',
+      allowUnsafeRedirect: true
+    };
   }
 
   return ENV;
