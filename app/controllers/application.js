@@ -4,7 +4,9 @@ export default Controller.extend({
   session: Ember.inject.service('session'),
   actions: {
     authenticateSession() {
-      this.get('session').authenticate('authenticator:torii', 'google-oauth2');
+      this.get('session').authenticate('authenticator:torii', 'google-oauth2').then(()=> {
+        this.get('account').loadCurrentUser();
+      });
     },
     invalidateSession() {
       const _this = this;

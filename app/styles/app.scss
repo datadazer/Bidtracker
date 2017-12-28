@@ -101,6 +101,18 @@ h3 i.material-icons {
   margin-left: 8px;
 }
 
+.loading-img {
+  background: url("loading.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -15px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 /* login styles */
 .login-page {
   // background-color: #4a4858;
