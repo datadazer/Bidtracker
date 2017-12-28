@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_request!
+  # before_filter :authenticate_request!, :except=>[:new, :create]
+  before_action :authenticate_request!, :except=>[:index]
+
   def index
     users = User.all
     render json: users
@@ -20,6 +22,7 @@ class UsersController < ApplicationController
   private
 
   def valid_token?
+    puts request.headers['Authorization'].present?
     request.headers['Authorization'].present? && auth_token.present?
   end
 

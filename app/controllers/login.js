@@ -4,7 +4,10 @@ export default Controller.extend({
   session: Ember.inject.service('session'),
   actions: {
     authenticateSession() {
-      this.get('session').authenticate('authenticator:torii', 'google-oauth2');
+      const _this = this;
+      this.get('session').authenticate('authenticator:torii', 'google-oauth2').then(function() {
+        _this.transitionToRoute('dashboard');
+      });
     },
     invalidateSession() {
       this.get('session').invalidate();

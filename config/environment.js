@@ -29,10 +29,18 @@ module.exports = function(environment) {
       'google-oauth2': {
         apiKey: "688090261241-kllc2v7q8ptn376d92tk84880efvn01f.apps.googleusercontent.com",
         redirectUri: "http://localhost:4200",
+        // redirectUri: "http://localhost:4200/torii/redirect.html",
         tokenExchangeUri: "http://localhost:3000/token"
       }
     },
-    routeAfterAuthentication: 'dashboard'
+    routeAfterAuthentication: 'dashboard',
+    allowUnsafeRedirect: true
+  };
+
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'dashboard',
+    // routeIfAlreadyAuthenticated: 'dashboard',
+    routeAfterInvalidation: 'login'
   };
 
   if (environment === 'development') {

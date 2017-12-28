@@ -146,6 +146,11 @@ h3 i.material-icons {
   border: 1px solid #03d08e;
 }
 
+nav.navbar {
+  width: 100vw;
+  margin-left: -15px;
+}
+
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   background-color: transparent;
