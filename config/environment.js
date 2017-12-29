@@ -43,7 +43,8 @@ module.exports = function(environment) {
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: 'dashboard',
     // routeIfAlreadyAuthenticated: 'dashboard',
-    routeAfterInvalidation: 'login'
+    routeAfterInvalidation: 'login',
+    serverTokenEndpoint:  'https://bidtracker.herokuapp.com/login'
   };
 
   if (environment === 'development') {
@@ -75,7 +76,7 @@ module.exports = function(environment) {
           // redirectUri: "http://localhost:4200",
           redirectUri: "https://bidtracker.herokuapp.com",
           // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
-          tokenExchangeUri: "https://bidtracker.herokuapp.com/oauth/token"
+          tokenExchangeUri: "https://bidtracker.herokuapp.com/token"
           // tokenExchangeUri: "http://localhost:3000/token"
         }
       },
