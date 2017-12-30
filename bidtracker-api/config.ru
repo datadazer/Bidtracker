@@ -1,18 +1,34 @@
 # This file is used by Rack-based servers to start the application.
 
 require_relative 'config/environment'
+# require ::File.expand_path('../config/environment',  __FILE__)
+run Rails.application
 
-## /config.ru
+require_relative 'boot'
+
+require 'rails/all'
+require 'rack'
 require 'rack/cors'
-use Rack::Cors do
 
-  # allow all origins in development
-  allow do
-    origins '*'
-    resource '*', 
-        :headers => :any, 
-        :methods => [:get, :post, :delete, :put, :options]
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups)
+
+module BidtrackerApi
+  class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
+
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+    config.api_only = true
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
   end
 end
-
-run Rails.application
