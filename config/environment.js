@@ -44,7 +44,7 @@ module.exports = function(environment) {
     routeAfterAuthentication: 'dashboard',
     // routeIfAlreadyAuthenticated: 'dashboard',
     routeAfterInvalidation: 'login',
-    serverTokenEndpoint:  'https://bidtracker.herokuapp.com/login'
+    serverTokenEndpoint: '/oauth2/token'
   };
 
   if (environment === 'development') {
@@ -76,7 +76,7 @@ module.exports = function(environment) {
           // redirectUri: "http://localhost:4200",
           redirectUri: "https://bidtracker.herokuapp.com",
           // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
-          tokenExchangeUri: "https://bidtracker.herokuapp.com/token"
+          tokenExchangeUri: "https://bidtracker.herokuapp.com/oauth2/token"
           // tokenExchangeUri: "http://localhost:3000/token"
         }
       },
