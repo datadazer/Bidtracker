@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/datadazer/Bidtracker/maintainability"><img src="https://api.codeclimate.com/v1/badges/7887e3384727e9123b45/maintainability" /></a>
+
 # bidtracker
 
 This README outlines the details of collaborating on this Ember application.
