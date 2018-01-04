@@ -42,10 +42,9 @@ module.exports = function(environment) {
 
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: 'dashboard',
-    // routeIfAlreadyAuthenticated: 'dashboard',
     routeAfterInvalidation: 'login',
-    serverTokenEndpoint: '/token',
-    crossOriginWhitelist: ['https://bidtracker.herokuapp.com/login']
+    serverTokenEndpoint: 'https://bidtracker.herokuapp.com/token',
+    crossOriginWhitelist: ['https://bidtracker.herokuapp.com/']
   };
 
   if (environment === 'development') {
