@@ -44,7 +44,8 @@ module.exports = function(environment) {
     routeAfterAuthentication: 'dashboard',
     // routeIfAlreadyAuthenticated: 'dashboard',
     routeAfterInvalidation: 'login',
-    serverTokenEndpoint: '/token'
+    serverTokenEndpoint: '/token',
+    crossOriginWhitelist: ['https://bidtracker.herokuapp.com/']
   };
 
   if (environment === 'development') {
@@ -68,7 +69,6 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    // test codeship
     ENV.torii = {
       providers: {
         'google-oauth2': {

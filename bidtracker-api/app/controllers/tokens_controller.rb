@@ -26,8 +26,10 @@ class TokensController < ApplicationController
     Signet::OAuth2::Client.new(
       authorization_uri: 'https://accounts.google.com/o/oauth2/auth',
       token_credential_uri: 'https://www.googleapis.com/oauth2/v3/token',
-      client_id: Rails.application.secrets.GOOGLE_KEY, client_secret: Rails.application.secrets.GOOGLE_SECRET,
-      scope: 'email profile', redirect_uri: 'http://localhost:4200'
+      client_id: Rails.application.secrets.GOOGLE_KEY,
+      client_secret: Rails.application.secrets.GOOGLE_SECRET,
+      scope: 'email profile',
+      redirect_uri: 'http://localhost:4200'
     ).tap do |client|
       client.code = params['code']
       client.fetch_access_token!
