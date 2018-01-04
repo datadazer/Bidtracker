@@ -45,7 +45,7 @@ module.exports = function(environment) {
     // routeIfAlreadyAuthenticated: 'dashboard',
     routeAfterInvalidation: 'login',
     serverTokenEndpoint: '/token',
-    crossOriginWhitelist: ['https://bidtracker.herokuapp.com/token']
+    crossOriginWhitelist: ['https://bidtracker.herokuapp.com/login']
   };
 
   if (environment === 'development') {
