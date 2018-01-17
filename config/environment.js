@@ -29,11 +29,11 @@ module.exports = function(environment) {
       'google-oauth2': {
         apiKey: "688090261241-kllc2v7q8ptn376d92tk84880efvn01f.apps.googleusercontent.com",
         // apiKey: "688090261241-0vek9b56e4ngmqgm78nu678u2ul0fme2.apps.googleusercontent.com",
-        redirectUri: "http://localhost:4200",
-        // redirectUri: "https://bidtracker.heroku.com",
+        // redirectUri: "http://localhost:4200",
+        redirectUri: "https://bidtracker.heroku.com",
         // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
-        // tokenExchangeUri: "https://bidtracker.heroku.com/oauth/token"
-        tokenExchangeUri: "http://localhost:3000/token"
+        tokenExchangeUri: "https://bidtracker.heroku.com/oauth/token"
+        // tokenExchangeUri: "http://localhost:3000/token"
       }
     },
     routeAfterAuthentication: 'dashboard',
@@ -42,9 +42,10 @@ module.exports = function(environment) {
 
   ENV['ember-simple-auth'] = {
     routeAfterAuthentication: 'dashboard',
+    // routeIfAlreadyAuthenticated: 'dashboard',
     routeAfterInvalidation: 'login',
-    serverTokenEndpoint: 'https://bidtracker.herokuapp.com/token',
-    crossOriginWhitelist: ['https://bidtracker.herokuapp.com/']
+    serverTokenEndpoint: '/token',
+    crossOriginWhitelist: ['/token']
   };
 
   if (environment === 'development') {

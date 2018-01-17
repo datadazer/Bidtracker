@@ -29,6 +29,9 @@ class TokensController < ApplicationController
       client_id: Rails.application.secrets.GOOGLE_KEY,
       client_secret: Rails.application.secrets.GOOGLE_SECRET,
       scope: 'email profile',
+#       client.authorization.client_id = ENV['CLIENT_ID']
+# client.authorization.client_secret = ENV['CLIENT_SECRET']
+# client.authorization.redirect_uri = ENV['OAUTH2_REDIRECT']
       redirect_uri: 'http://localhost:4200'
     ).tap do |client|
       client.code = params['code']
