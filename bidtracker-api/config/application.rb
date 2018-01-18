@@ -22,6 +22,7 @@ module BidtrackerApi
       allow do
         origins '*'
         resource '*', headers: :any, methods: [:get, :post, :options]
+        resource '/cors', headers: :any, methods: [:post]
       end
     end
   end
