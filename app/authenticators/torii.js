@@ -12,7 +12,7 @@ export default ToriiAuthenticator.extend({
 
     return this._super(...arguments).then((data) => {
       return ajax.request(tokenExchangeUri, {
-        // type: 'GET',
+        type: 'POST',
         crossDomain: true,
         dataType: 'json',
         contentType: 'application/json',
