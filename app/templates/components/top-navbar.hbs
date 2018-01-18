@@ -22,7 +22,7 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      {{#each model as |user|}}
+      {{#each model.users as |user|}}
         <li class="nav-item dropdown mr-auto">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{user.firstName}} {{user.lastName}}
