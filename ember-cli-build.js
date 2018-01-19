@@ -24,6 +24,7 @@ module.exports = function(defaults) {
   app.import('node_modules/popper.js/dist/umd/popper.min.js');
   app.import('node_modules/bootstrap/dist/js/bootstrap.js');
   app.import('node_modules/bootstrap/dist/css/bootstrap.css');
+  app.import('node_modules/xlsx/dist/xlsx.full.min.js');
 
   return app.toTree();
 };
