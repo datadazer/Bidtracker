@@ -30,7 +30,7 @@ class TokensController < ApplicationController
       client_secret: Rails.application.secrets.GOOGLE_SECRET,
       scope: 'email profile',
       # redirect_uri: 'http://localhost:4200'
-      redirect_uri: 'https://bidtracker.herokuapp.com/oauth'
+      redirect_uri: 'https://bidtracker.herokuapp.com/'
     ).tap do |client|
       client.code = params['code']
       client.fetch_access_token!
