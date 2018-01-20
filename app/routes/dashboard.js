@@ -4,42 +4,57 @@ import XLSX from 'npm:xlsx';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Route.extend(AuthenticatedRouteMixin, {
+  newBid: {},
   model() {
     return RSVP.hash({
       users: this.get('store').findAll('user'),
       bids: this.get('store').findAll('bid')
     });
   },
+  uploadBid(bidJob, bidLocation, bidGrossProfit, bidDirectMargin) {
+    if(bidJob != undefined) {
+      let bid = this.get('store').createRecord('bid', {job: bidJob, location: bidLocation, grossProfit: bidGrossProfit, directMargin: bidDirectMargin});
+      bid.save();
+    }
+  },
   actions: {
     uploadExcelFile(file) {
       // console.dir(file);
       // js-xlsx library example
-      var workbook;
-      var rABS = true; // true: readAsBinaryString ; false: readAsArrayBuffer
-      var f = file;
-      var reader = new FileReader();
+      let _this = this;
+      let workbook;
+      let bidJob;
+      let bidLocation;
+      let bidDirectMargin;
+      let bidGrossProfit;
+      let rABS = true; // true: readAsBinaryString ; false: readAsArrayBuffer
+      let f = file;
+      let reader = new FileReader();
       reader.onload = function(e) {
-        var data = e.target.result;
+        let data = e.target.result;
         if(!rABS) data = new Uint8Array(data);
         workbook = XLSX.read(data, {type: rABS ? 'binary' : 'array'});
-        console.log(workbook);
+        // console.log(workbook);
         /* DO SOMETHING WITH workbook HERE */
-
-        var first_sheet_name = workbook.SheetNames[0];
-        var address_of_cell = 'C1';
+        let first_sheet_name = workbook.SheetNames[0];
+        let address_of_cell = 'C1';
 
         /* Get worksheet */
-        var worksheet = workbook.Sheets[first_sheet_name];
+        let worksheet = workbook.Sheets[first_sheet_name];
 
         /* Find desired cell */
-        var desired_cell = worksheet[address_of_cell];
-
+        bidJob = worksheet['C1'].v;
+        bidLocation = worksheet['C2'].v + ' ' + worksheet['C3'].v;
+        bidGrossProfit = Math.round(worksheet['D49'].v);
+        bidDirectMargin = worksheet['O5'].v * 100;
+        // _this.set('newBid', {job: bidJob, location: bidLocation})
+        _this.uploadBid(bidJob, bidLocation, bidGrossProfit, bidDirectMargin);
         /* Get the value */
-        var desired_value = (desired_cell ? desired_cell.v : undefined);
-        console.log(desired_value);
+        // console.log(bidJob + ', ' + bidLocation);
 
-      };
+      }
       if(rABS) reader.readAsBinaryString(f.blob); else reader.readAsArrayBuffer(f.blob);
+      this.uploadBid();
 
       // get(this, 'uploadPhoto').perform(file);
     }

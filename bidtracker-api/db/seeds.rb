@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Bid.create(job: "JW Marriott Camelback New Ballroom & Remodel", location: "5402 E Lincoln Dr Scottsdale, AZ")
+# Bid.create(job: "JW Marriott Camelback New Ballroom & Remodel", location: "5402 E Lincoln Dr Scottsdale, AZ")
 User.create(first_name: "Tyler", last_name: "Davis", email: "tylerkoreydavis@gmail.com")
