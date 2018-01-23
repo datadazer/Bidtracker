@@ -57,6 +57,7 @@ http {
       proxy_set_header NginX-Proxy true;
       proxy_ssl_session_reuse off;
       proxy_redirect off;
+      error_page  405     =200 $uri;
     }
 
     location ~* \index.html$ {
