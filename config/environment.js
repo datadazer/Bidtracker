@@ -77,8 +77,8 @@ module.exports = function(environment) {
           // redirectUri: "http://localhost:4200",
           redirectUri: "https://bidtracker.herokuapp.com",
           // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
-          // tokenExchangeUri: "/token"
-          tokenExchangeUri: "http://localhost:3000/token"
+          tokenExchangeUri: "/token"
+          // tokenExchangeUri: "https://localhost:3000/token"
         }
       },
       routeAfterAuthentication: 'dashboard',
