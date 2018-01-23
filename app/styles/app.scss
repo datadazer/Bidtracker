@@ -192,6 +192,50 @@ nav.navbar {
   color: rgba(0, 0, 0, 0.60);
 }
 
+/*==== FADE IN UP ===*/
+@-webkit-keyframes panel {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25%, 0);
+    transform: translate3d(0, 25%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes panel {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 25%, 0);
+    transform: translate3d(0, 25%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.panel {
+  -webkit-animation-name: panel;
+  animation-name: panel;
+  -webkit-animation-delay: 0.25s;
+  -moz-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+
+
+
 
 
 

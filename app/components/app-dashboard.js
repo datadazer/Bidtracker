@@ -19,9 +19,9 @@ export default Component.extend({
     return directMarginAggregation / this.get('model.bids.length');
   }),
   grossProfitData: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["12/1", "12/2", "12/3", "12/4", "12/5", "12/6"],
       datasets: [{
-        label: '# of Votes',
+        label: 'DM%',
         data: [12, 19, 3, 5, 2, 3],
         backgroundColor: [
          'rgba(45, 227, 113, 0.2)',
