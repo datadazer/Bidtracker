@@ -74,8 +74,8 @@ module.exports = function(environment) {
         'google-oauth2': {
           // apiKey: "688090261241-kllc2v7q8ptn376d92tk84880efvn01f.apps.googleusercontent.com",
           apiKey: "688090261241-0vek9b56e4ngmqgm78nu678u2ul0fme2.apps.googleusercontent.com",
-          redirectUri: "http://localhost:4200",
-          // redirectUri: "https://bidtracker.herokuapp.com/",
+          // redirectUri: "http://localhost:4200",
+          redirectUri: "https://bidtracker.herokuapp.com",
           // should be doing something like this: redirectUri: "http://localhost:4200/torii/redirect.html",
           // tokenExchangeUri: "/token"
           tokenExchangeUri: "http://localhost:3000/token"
